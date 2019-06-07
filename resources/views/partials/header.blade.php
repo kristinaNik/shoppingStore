@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search for product">
+                    <input type="text" id="search" class="form-control" placeholder="Search for product">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

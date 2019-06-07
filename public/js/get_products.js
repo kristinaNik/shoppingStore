@@ -1,16 +1,24 @@
 
 window.addEventListener('load', function () {
+
+
         $.ajax({
             type: 'GET',
             url: "api/products",
             success: function (data) {
-                console.log(data);
                 var trHTML = '';
+
                 $.each(data, function (i, item) {
                     $.each(item, function (j, product_data) {
-                        trHTML += '<div class="col-sm-6 col-md-4"><div class="thumbnail"><img src="storage/images/'+ product_data.image + '"class="img-thumbnail">' +
+
+                        trHTML += '<div class="col-sm-6 col-md-4"><div class="thumbnail">' +
+
+                            '<img src="storage/images/'+ product_data.image + '"class="img-thumbnail">' +
+
                             '<div class="caption">' +
+                            '<a href="/' + product_data.id + '">' +
                             '<h3>'+ product_data.title + '</h3>' +
+                            '</a>' +
                             '<p class="description">' +
                             product_data.description +
                             '</p>' +
@@ -28,4 +36,7 @@ window.addEventListener('load', function () {
                 $('.row').append(trHTML);
             }
         });
+
+
+
     });

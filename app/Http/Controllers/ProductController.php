@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Http\Resources\ProductCollection;
+use App\Http\Resources\Product as ProductResource;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,12 +18,15 @@ class ProductController extends Controller
      *
      * @return ProductCollection
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
+        $searchField = $request->get('search');
+        $products = Product::search($searchField);
 
       //  return view('shop/index', ['products' => $products]);
-        return new ProductCollection($products);
+
+
+        return new ProductCollection(collect($products));
 
     }
 
@@ -53,9 +57,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $products = Product::findOrFail($id);
+        return new ProductResource($products);
     }
 
     /**
