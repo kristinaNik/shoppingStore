@@ -29,4 +29,6 @@ Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart')->name('product
 
 Route::get('/reduce/{id}', 'ProductController@getReduceByOne')->name('product.reduceByOne');
 
+Route::get('/remove/{id}', 'ProductController@getRemoveItem')->name('product.remove');
+
 Route::get('cart/shopping-cart', 'ProductController@getCart')->name('product.shoppingCart');

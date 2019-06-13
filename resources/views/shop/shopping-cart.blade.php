@@ -20,8 +20,8 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Reduce by 1</a>
-                                        <a href="#">Reduce All</a>
+                                        <a href="{{route('product.reduceByOne', ['id' => $product['item']['id']] )}}">Reduce by 1</a>
+                                        <a href="{{route('product.remove', ['id' => $product['item']['id']] )}}">Reduce All</a>
                                     </li>
                                 </ul>
                             </div>

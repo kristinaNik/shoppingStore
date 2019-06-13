@@ -125,10 +125,29 @@ class ProductController extends Controller
 
             $request->session()->put('cart', $cart);
 
+            if (count($cart->items) > 0) {
+                $request->session()->put('cart', $cart);
+            } else {
+                $request->session()->forget('cart');
+            }
+
             return redirect()->route('product.shoppingCart');
         } else {
             return redirect()->route('login');
         }
+    }
+
+    public function getRemoveItem(Request $request, $id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+            $cart = new Cart($oldCart);
+            $cart->removeItem($id);
+
+            if (count($cart->items) > 0) {
+                $request->session()->put('cart', $cart);
+            } else {
+                $request->session()->forget('cart');
+            }
+        return redirect()->route('product.shoppingCart');
     }
 
     /**
