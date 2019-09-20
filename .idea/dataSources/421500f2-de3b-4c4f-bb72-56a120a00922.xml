@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="shoppingCart@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
     <root id="1">
       <DefaultCasing>exact</DefaultCasing>
     </root>
@@ -954,20 +954,20 @@
     </table>
     <column id="242" parent="238" name="id">
       <Position>1</Position>
-      <DataType>int(10) unsigned|0</DataType>
+      <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="243" parent="238" name="migration">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="244" parent="238" name="batch">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -978,19 +978,19 @@
     </key>
     <column id="246" parent="239" name="email">
       <Position>1</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="247" parent="239" name="token">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="248" parent="239" name="created_at">
       <Position>3</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="249" parent="239" name="password_resets_email_index">
@@ -998,43 +998,43 @@
     </index>
     <column id="250" parent="240" name="id">
       <Position>1</Position>
-      <DataType>bigint(20) unsigned|0</DataType>
+      <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="251" parent="240" name="image">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="252" parent="240" name="title">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="253" parent="240" name="description">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="254" parent="240" name="price">
       <Position>5</Position>
-      <DataType>double(8,2)|0</DataType>
+      <DataType>double(8,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="255" parent="240" name="created_at">
       <Position>6</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="256" parent="240" name="updated_at">
       <Position>7</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="257" parent="240" name="PRIMARY">
@@ -1044,47 +1044,47 @@
     </key>
     <column id="258" parent="241" name="id">
       <Position>1</Position>
-      <DataType>bigint(20) unsigned|0</DataType>
+      <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="259" parent="241" name="name">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="260" parent="241" name="email">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="261" parent="241" name="email_verified_at">
       <Position>4</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="262" parent="241" name="password">
       <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="263" parent="241" name="remember_token">
       <Position>6</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="264" parent="241" name="created_at">
       <Position>7</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="265" parent="241" name="updated_at">
       <Position>8</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="266" parent="241" name="users_email_unique">
