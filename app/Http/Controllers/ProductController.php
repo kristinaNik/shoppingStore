@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
-use App\Http\Resources\ProductCollection;
 use App\Http\Resources\Product as ProductResource;
 use App\Product;
 use Illuminate\Http\Request;
@@ -11,17 +10,23 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return ProductCollection
+     * @param Request $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request)
     {
-        $searchField = $request->get('search');
-        $products = Product::search($searchField);
 
-        return new ProductCollection(collect($products));
+        $query = $request->input('query');
+        if (!empty($query)) {
+
+            $products = Product::search($query)->get();
+        } else {
+            $products = Product::getProducts()->get();
+        }
+
+        return ProductResource::collection($products);
 
     }
 

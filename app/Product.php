@@ -2,21 +2,30 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 
 
 class Product extends Model
 {
-    //
+    protected $table = 'product';
 
     protected $fillable = [
         'image', 'title', 'description', 'price'
     ];
 
 
-    public function scopeSearch( Builder $query, $params) {
-        return $query->where('title', 'LIKE', "%$params%")->get();
+    public function scopeSearch($query,$params) {
+
+        return $query->where('title', 'LIKE', '%' . $params . '%');
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function scopeGetProducts()
+    {
+        return Product::orderBy('id', 'desc');
     }
 }

@@ -8,7 +8,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Faker\Generator as Faker;
 
-$factory->define(\App\Product::class, function (Faker $faker) {
+$factory->define(\App\Product::class, function (Faker $faker) {;
     return [
         'image' => $faker->image('public/storage/images',400,300, null, false),
         'title' => $faker->word,
