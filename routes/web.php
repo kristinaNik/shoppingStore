@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('shop/index');
 })->name('product.index');
 
+Route::get('/search', 'ProductController@index')->name('search.action');
 
 Route::get('/{id}', function(){
     return  view('shop/show');
