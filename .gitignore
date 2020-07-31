@@ -12,3 +12,4 @@ yarn-error.log
 package.json
 package-lock.json
 yarn.lock
+composer.lock
